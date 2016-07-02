@@ -51,15 +51,17 @@ void loop(){
   char stringBuffer[20];
 
   sprintf (stringBuffer,"x: %5d", x);
-  lcd.setCursor(0,0);
-  lcd.print (stringBuffer);
+  lcdprint(lcd,0,0,stringBuffer);
   sprintf (stringBuffer,"y: %5d", y);
-  lcd.setCursor(0,1);
-  lcd.print (stringBuffer);
+  lcdprint(lcd,0,1,stringBuffer);
   sprintf (stringBuffer,"z: %5d", z);
-  lcd.setCursor(0,2);
-  lcd.print (stringBuffer);
+  lcdprint(lcd,0,2,stringBuffer);
 
   delay(250);
+}
+
+void lcdprint (LiquidCrystal_I2C lcd, int col, int row, char* str) {
+  lcd.setCursor(col,row);
+  lcd.print (str);
 }
 
