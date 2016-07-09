@@ -43,7 +43,7 @@ LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 for a 20 chars
      } else {
        encoder0Pos++;
      }
-     sprintf (stringBuffer,"rot:%5d|ser:%4d", encoder0Pos,servoPos);
+     sprintf (stringBuffer,"rot:%5d", encoder0Pos);
      lcd.setCursor(0,0);
      lcd.print (stringBuffer);
      delay(15);
